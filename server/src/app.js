@@ -17,7 +17,17 @@ const app = express();
 
 
 // MIDDLEWARES
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://saree-collections-two.vercel.app",
+    // Add your admin Vercel URL here too if it's different
+  ],
+  credentials: true,
+}));
 app.use(express.json({ limit: "50mb" })); // 50mb to allow base64 image uploads
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 

@@ -2,7 +2,9 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import { SareeProduct, Review } from '../types';
 import { MOCK_SAREES } from '../data/mockSarees';
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = window.location.hostname === "localhost"
+  ? "http://localhost:5000/api"
+  : "https://saree-collections-jqa7.onrender.com/api";
 
 interface FilterState {
   search: string;
