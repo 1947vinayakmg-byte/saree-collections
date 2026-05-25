@@ -24,7 +24,7 @@ app.use(cors({
     "http://localhost:5173",
     "http://localhost:5174",
     "https://saree-collections-two.vercel.app",
-    // Add your admin Vercel URL here too if it's different
+    "https://saree-collections-lekn.vercel.app"
   ],
   credentials: true,
 }));
