@@ -1,0 +1,8 @@
+{
+  "name": "Saree demo-web",
+  "description": "An elegant and premium responsive demo-web website for a local saree shop, featuring curated collections, rich saree details, WhatsApp ordering, custom filters, and active store details.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

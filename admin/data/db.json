@@ -1,0 +1,61 @@
+{
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Kanchipuram Golden Brocade Silk Saree",
+      "description": "An elegant pure silk saree featuring beautiful golden zari brocade weave on the border and pallu. Perfect for weddings and major festivals.",
+      "price": 8500,
+      "category": "Silk Saree",
+      "stockStatus": "In Stock",
+      "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2026-05-20T07:37:12.952Z"
+    },
+    {
+      "id": "prod-2",
+      "name": "Banarasi Crimson Georgette Saree",
+      "description": "Breathable georgette body paired with masterfully crafted Banarasi silver booti work. Lightweight and comfortable for evening galas.",
+      "price": 6200,
+      "category": "Georgette Saree",
+      "stockStatus": "In Stock",
+      "image": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2026-05-22T07:37:12.954Z"
+    },
+    {
+      "id": "prod-3",
+      "name": "Classic Mint Green Chanderi Cotton Saree",
+      "description": "Beautiful cotton silk blend exhibiting block prints and absolute pastel charm. Ideal for formal office wear and casual high teas.",
+      "price": 2450,
+      "category": "Cotton Saree",
+      "stockStatus": "Low Stock",
+      "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2026-05-15T07:37:12.954Z"
+    },
+    {
+      "id": "prod-4",
+      "name": "Midnight Indigo Designer Linen Saree",
+      "description": "Premium pure organic linen base decorated with custom silver thread embroidery on raw borders. Minimalist elegance personified.",
+      "price": 3800,
+      "category": "Linen Saree",
+      "stockStatus": "In Stock",
+      "image": "https://images.unsplash.com/photo-1609357518652-6cf0416f0cbe?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2026-05-24T19:37:12.954Z"
+    },
+    {
+      "id": "prod-5",
+      "name": "Traditional Handloom Sambalpuri Ikat",
+      "description": "Traditional Orissa double ikat weaving pattern crafted on heavy mercerized cotton. Features shell motifs and striking red contrasts.",
+      "price": 4900,
+      "category": "Cotton Saree",
+      "stockStatus": "Out of Stock",
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80",
+      "createdAt": "2026-05-05T07:37:12.954Z"
+    }
+  ],
+  "settings": {
+    "shopName": "demo saree",
+    "whatsappNumber": "+919876543210",
+    "instagramLink": "https://instagram.com/vastra_sarees",
+    "facebookLink": "https://facebook.com/vastrasarees",
+    "paymentLink": "https://upi.link/vastrademo-web@upi"
+  }
+}

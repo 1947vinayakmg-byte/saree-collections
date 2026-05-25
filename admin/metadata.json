@@ -1,0 +1,8 @@
+{
+  "name": "demo-web Admin Panel",
+  "description": "A modern, beginner-friendly admin dashboard for a saree and clothing shop, featuring inventory management, product forms, sales statistics, and configurations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

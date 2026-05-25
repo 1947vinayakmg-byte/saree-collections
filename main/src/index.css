@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  /* Redefine stone neutrals range to match the Natural Tones palette */
+  --color-stone-50: #F8F5F2; /* Pure warm light stone background */
+  --color-stone-100: #FAF8F6; /* Alabaster-beige secondary background */
+  --color-stone-200: #E5E0DA; /* Light clay grey for dividers and borders */
+  --color-stone-300: #E9E4DF; /* Accent mild warm grey */
+  --color-stone-400: #A89F94; /* Dust beige tracker labels */
+  --color-stone-500: #93897E; /* Dust sandstone readable descriptions */
+  --color-stone-600: #7C6A5A; /* Sandbox medium taupe sand */
+  --color-stone-700: #5F5044; /* Dark shadow sand */
+  --color-stone-800: #4A3F36; /* Charcoal deep earth */
+  --color-stone-850: #423830; /* Bold charcoal clay */
+  --color-stone-900: #3A332D; /* Primary rich espresso-charcoal text */
+
+  /* Redefine gold to Sage Green / botanical olive tones of the theme */
+  --color-gold-50: #F3F3ED;
+  --color-gold-100: #DCDCD0;
+  --color-gold-200: #C7C7A8;
+  --color-gold-300: #A8A884;
+  --color-gold-400: #7C7C5A;
+  --color-gold-500: #5A5A40; /* Olive/Sage Green primary brand highlight */
+  --color-gold-600: #4A4A35; /* Olive active toggle tone */
+  --color-gold-700: #3D3D2B;
+  --color-gold-800: #2F2F21;
+  --color-gold-900: #1F1F16;
+
+  /* Redefine burgundy to match Natural Tones' earthy crimson terracotta */
+  --color-burgundy-50: #FBF5F4;
+  --color-burgundy-100: #F8EBEA;
+  --color-burgundy-200: #F1CECB;
+  --color-burgundy-300: #E6A7A2;
+  --color-burgundy-400: #D67C75;
+  --color-burgundy-500: #BE544D;
+  --color-burgundy-600: #A13E38;
+  --color-burgundy-700: #8D332D; /* Terracotta earthy red core accent */
+  --color-burgundy-800: #742B26;
+  --color-burgundy-900: #5F211C;
+  --color-burgundy-950: #4a1d24;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: #F8F5F2; /* Soft warm light sand canvas background */
+    color: #3A332D; /* Warm rich organic charcoal text */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: #3A332D;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom demo-web scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6ccc2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b7a196;
+}
+
+/* Elegant animations utility */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
