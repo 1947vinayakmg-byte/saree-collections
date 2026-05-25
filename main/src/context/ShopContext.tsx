@@ -2,7 +2,9 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import { SareeProduct, Review } from '../types';
 import { MOCK_SAREES } from '../data/mockSarees';
 
-const API_URL = window.location.hostname === "localhost"
+const hostname = window.location.hostname;
+const isLocal = hostname === "localhost" || hostname === "127.0.0.1" || hostname.startsWith("192.168.");
+const API_URL = isLocal
   ? "http://localhost:5000/api"
   : "https://saree-collections-jqa7.onrender.com/api";
 
@@ -75,14 +77,14 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
               ? p.images
               : (p.image ? [p.image] : ["https://picsum.photos/seed/default/800/1200"]),
             colors: p.colors || [{ name: p.category || "Default", hex: "#8a1f1f" }],
-            isFeatured: p.isFeatured || false,
-            isTrending: p.isTrending || false,
+            isFeatured: true, // Force to true so it shows on homepage top section
+            isTrending: true, // Force to true so it shows on homepage trending section
             isCodAvailable: p.isCodAvailable !== false,
             rating: p.rating || 4.5,
             reviewsCount: p.reviewsCount || 0,
             stockStatus: p.stockStatus,
           };
-        });
+        }).reverse(); // Reverse so the newest added products appear first
 
         // Combine: backend products first, then mock data as fallback
         // Remove any mock products that have the same name as a backend product

@@ -1,7 +1,9 @@
 import axios from "axios";
 
 // Create an Axios instance with base URL
-const API_BASE = window.location.hostname === "localhost"
+const hostname = window.location.hostname;
+const isLocal = hostname === "localhost" || hostname === "127.0.0.1" || hostname.startsWith("192.168.");
+const API_BASE = isLocal
   ? "http://localhost:5000/api"
   : "https://saree-collections-jqa7.onrender.com/api";
 

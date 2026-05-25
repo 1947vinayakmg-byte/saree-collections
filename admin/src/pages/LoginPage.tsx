@@ -16,8 +16,8 @@ export default function LoginPage() {
     }
   }, [isAuthenticated, navigate]);
 
-  const [email, setEmail] = useState("admin@shop.com"); // Pre-filled for immediate developer convenience
-  const [password, setPassword] = useState("admin123");
+  const [email, setEmail] = useState("admin@gmail.com"); // Pre-filled for immediate developer convenience
+  const [password, setPassword] = useState("123456");
   const [errorList, setErrorList] = useState<{ [key: string]: string }>({});
 
   const handleLogin = async (e: React.FormEvent) => {

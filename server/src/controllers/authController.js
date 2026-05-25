@@ -34,6 +34,11 @@ const loginAdmin = async (req, res) => {
       success: true,
       message: "Login Successful",
       token,
+      user: {
+        id: admin._id,
+        email: admin.email,
+        role: "admin"
+      }
     });
   } catch (error) {
     res.status(500).json({

@@ -38,7 +38,9 @@ interface AdminContextProps {
   removeToast: (id: string) => void;
 }
 
-const API_URL = window.location.hostname === "localhost"
+const hostname = window.location.hostname;
+const isLocal = hostname === "localhost" || hostname === "127.0.0.1" || hostname.startsWith("192.168.");
+const API_URL = isLocal
   ? "http://localhost:5000/api"
   : "https://saree-collections-jqa7.onrender.com/api";
 
