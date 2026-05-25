@@ -39,6 +39,12 @@ app.use(
 );
 
 
+// ROOT ROUTE
+app.get("/", (req, res) => {
+  res.send("API Running Successfully");
+});
+
+
 // ROUTES
 app.use("/api/auth", authRoutes);
 

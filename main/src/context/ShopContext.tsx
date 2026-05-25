@@ -37,28 +37,52 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (res.ok) {
         const data = await res.json();
 
+        // Map admin categories to main website categories
+        const categoryMap: Record<string, string> = {
+          "silk saree": "banarasi",
+          "georgette saree": "georgette",
+          "cotton saree": "chanderi",
+          "linen saree": "linen",
+          "organza saree": "organza",
+          "designer saree": "georgette",
+          "kurtis & suits": "chanderi",
+          "lehenga choli": "banarasi",
+          // Direct matches (if already correct)
+          "banarasi": "banarasi",
+          "kanjeevaram": "kanjeevaram",
+          "georgette": "georgette",
+          "linen": "linen",
+          "organza": "organza",
+          "chanderi": "chanderi",
+        };
+
         // Normalize backend products to match SareeProduct shape
-        const backendProducts: SareeProduct[] = data.map((p: any) => ({
-          id: p._id || p.id,
-          name: p.name || "",
-          price: Number(p.price) || 0,
-          category: (p.category || "").toLowerCase().replace(/\s+saree$/i, "").replace(/\s+/g, "") as SareeProduct["category"],
-          description: p.description || "",
-          details: p.details || [],
-          fabric: p.fabric || p.category || "",
-          zariWork: p.zariWork || "None" as SareeProduct["zariWork"],
-          craftsmanship: p.craftsmanship || "Handloom" as SareeProduct["craftsmanship"],
-          images: p.images && p.images.length > 0
-            ? p.images
-            : (p.image ? [p.image] : ["https://picsum.photos/seed/default/800/1200"]),
-          colors: p.colors || [{ name: p.category || "Default", hex: "#8a1f1f" }],
-          isFeatured: p.isFeatured || false,
-          isTrending: p.isTrending || false,
-          isCodAvailable: p.isCodAvailable !== false,
-          rating: p.rating || 4.5,
-          reviewsCount: p.reviewsCount || 0,
-          stockStatus: p.stockStatus,
-        }));
+        const backendProducts: SareeProduct[] = data.map((p: any) => {
+          const rawCategory = (p.category || "").toLowerCase().trim();
+          const mappedCategory = categoryMap[rawCategory] || "banarasi";
+
+          return {
+            id: p._id || p.id,
+            name: p.name || "",
+            price: Number(p.price) || 0,
+            category: mappedCategory as SareeProduct["category"],
+            description: p.description || "",
+            details: p.details || [],
+            fabric: p.fabric || p.category || "",
+            zariWork: p.zariWork || "None" as SareeProduct["zariWork"],
+            craftsmanship: p.craftsmanship || "Handloom" as SareeProduct["craftsmanship"],
+            images: p.images && p.images.length > 0
+              ? p.images
+              : (p.image ? [p.image] : ["https://picsum.photos/seed/default/800/1200"]),
+            colors: p.colors || [{ name: p.category || "Default", hex: "#8a1f1f" }],
+            isFeatured: p.isFeatured || false,
+            isTrending: p.isTrending || false,
+            isCodAvailable: p.isCodAvailable !== false,
+            rating: p.rating || 4.5,
+            reviewsCount: p.reviewsCount || 0,
+            stockStatus: p.stockStatus,
+          };
+        });
 
         // Combine: backend products first, then mock data as fallback
         // Remove any mock products that have the same name as a backend product
